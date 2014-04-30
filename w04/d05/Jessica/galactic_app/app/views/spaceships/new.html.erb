@@ -1,0 +1,37 @@
+<h1>Create a new Spaceship</h1>
+<form action="/spaceships" method="POST">
+  <input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>">
+  
+  <label>
+      Name:
+      <input type="string" name="name">
+  </label>
+
+  <label>
+      Capacity:
+      <input type="integer" name="capacity">
+  </label>
+
+   <label>
+      Origin:
+      <input type="string" name="origin">
+  </label>
+
+  <label>
+      Spieces Allowed:
+      <input type="string" name="spieces_allowed">
+  </label>
+
+  <label>
+      Photo URL:
+      <input type="text" name= "photo_url">
+  </label>
+
+  <label>
+        Purpose:
+      <input type= "string" name="purpose">
+  </label>
+  
+  <button>Blastoff</button>
+
+</form>

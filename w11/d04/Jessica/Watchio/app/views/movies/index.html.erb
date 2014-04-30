@@ -1,0 +1,16 @@
+<h1>Movies</h1>
+<form>
+  Title: <input type="text" name="title"></input>
+  <input type="submit"></input>
+</form>
+
+<ul class="movies">
+</ul>
+
+<script type="template" class="template">
+  <%%= movie.get('title') %>
+  <input type="checkbox" <%%= movie.get('done') ? "checked" : "" %></input>
+  <span>&times;</span>
+  <img src='<%%= movie.poster %>'>
+</script>
+

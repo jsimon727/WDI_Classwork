@@ -1,0 +1,18 @@
+
+#
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: infiniteGiphy_development
+  pool: 5
+  username: jennifer
+  password:
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: infiniteGiphy_test
+  pool: 5
+  username: jennifer
+  password:

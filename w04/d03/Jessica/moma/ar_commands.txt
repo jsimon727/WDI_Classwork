@@ -1,0 +1,45 @@
+pablo_picasso = Artist.create(:name => "Pablo Picasso", :nationality => "Spanish")
+dali = Artist.create(:name =>"Dali", :nationality => "Spainish")
+van_gogh = Artist.create(:name => "Van Gogh", :nationality => "Dutch")
+
+van_gogh.paintings.create(:title => "Starry Night")
+
+artists = Artists.all
+artists.each {|artist| puts "Artist Name: #{artist.name}"}
+
+paintings = Paintings.all
+paintings.each {|painting| puts "Painting Title: #{painting.title}"}
+
+Artist.find_by(:id => 2)
+Artist.where(id: 2)
+Artist.find(2)
+
+Artist.find_by(:name => "Van Gogh")
+Artist.where(:nationality => "Spanish")
+
+paintings.find_by(:id => 1)
+paintings.find_by(:title => "Guernica")
+
+find_pablo = Artist.find_by(:name => "Pablo Picasso")
+find_pablo.paintings
+
+find_guernica = Painting.find_by(:title => "Guernica")
+find_guernica.artist
+
+
+find_van_gogh = Artist.find_by(:name => "Van Gogh")
+find_van_gogh.update(:nationality => "American")
+
+
+find_starry_night = Painting.find_by(:title => "Starry Night")
+
+find_starry_night.update(:name => "American")
+
+find_starry_night.update(find_pablo.id)
+
+find_pablo.paintings << starry_night
+
+
+
+
+

@@ -1,0 +1,9 @@
+<h1> Meet the aliens! </h1>
+
+<ul>
+  <% @aliens.each do |alien| %>
+    <li>
+      <a href="/spaceships/<%= alien.spaceship_id %>/aliens/<%= alien.id %>"> Name: <%= alien.name %></a>
+    </li>
+  <% end %>
+</ul>

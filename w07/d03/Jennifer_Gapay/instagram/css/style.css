@@ -1,0 +1,60 @@
+header {
+
+}
+
+.page-wrapper {
+
+}
+
+.content {
+text-align: center;
+}
+
+.iphone {
+
+}
+
+.logo {
+
+}
+
+.button {
+
+}
+
+.text-box {
+
+}
+
+h1 {
+
+}
+
+p {
+
+}
+
+.apps {
+
+}
+
+.menu {
+
+}
+
+footer {
+  border: 1px solid red;
+  display: inline;
+  margin: 0 auto;
+}
+
+.nav {
+  border: 1px solid green;
+  display: inline;
+}
+
+nav ul {
+  display: inline;
+  padding: 0;
+
+}

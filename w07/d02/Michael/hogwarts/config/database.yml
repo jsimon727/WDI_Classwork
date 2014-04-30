@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: hogwarts_development
+  pool: 5
+  username: michaelwagner
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: hogwarts_test
+  pool: 5
+  username: michaelwagner
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: hogwarts_production
+  pool: 5
+  username: michaelwagner
+  password:

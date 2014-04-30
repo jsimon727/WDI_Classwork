@@ -1,0 +1,44 @@
+a {
+	color: #0898bb;
+}
+
+a:hover {
+	color: #20222a;
+}
+
+body {
+	width: 100%;
+}
+.super_container {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	padding: 20px;
+	font-family: "Times New Roman", serif;
+	color: #656565;
+	font-size: 12px;
+	line-height: 17px;
+}
+
+.brand_logo {
+	
+}
+
+.feature_reel {
+	display: block;
+}
+.media {
+	display: inline;
+	margin: 3px;
+}
+
+.media_image {
+	border-width:3px;
+	border-color:#d1d1d1;
+	border-style:solid;
+}
+
+.announcements {
+	width: 95%;
+	margin: 5px;
+}

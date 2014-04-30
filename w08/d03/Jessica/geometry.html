@@ -1,0 +1,75 @@
+<script type="text/javascript">
+function Rectangle(length, width) {
+  this.length = length;
+  this.width = width;
+  this.isSquare = function(){
+    if (length === width) { 
+      return true;
+    } else {
+      return false;
+    }
+  };
+  this.area = function() {
+    return length * width;
+  };
+  this.perimeter = function() {
+    return 2*length + 2*width;
+  };
+};
+
+example1 = new Rectangle(4, 6);
+example2 = new Rectangle(3, 3);
+example3 = new Rectangle(8, 10);
+
+
+// * isEquilateral - [Returns whether the triangle is equilateral or not](http://en.wikipedia.org/wiki/Equilateral_triangle)
+// * isIsosceles - [Returns whether the triangle is isosceles or not](http://en.wikipedia.org/wiki/Isosceles_triangle#By_relative_lengths_of_sides)
+// * area - [Calculates the area of the Triangle](http://en.wikipedia.org/wiki/Heron%27s_formula)
+// * isObtuse - [Returns whether the triangle is obtuse or not](http://en.wikipedia.org/wiki/Isosceles_triangle#By_internal_angles)
+
+function Triangle(sideA, sideB, sideC) {
+  this.sideA = sideA;
+  this.sideB = sideB;
+  this.sideC = sideC;
+  this.isEquilateral = function() {
+    if (sideA === sideB === sideC){
+      return true
+    }
+    else {
+      return false;
+    }
+  };
+
+  this.isIsosceles = function() {
+    if (sideA === sideB || sideB === sideC || sideA === sideC){
+      return true
+    }
+    else {
+      return false
+    }
+  };
+
+  this.area = function() {
+    var s = ((sideA) + (sideB) + (sideC))/2
+    return Math.sqrt(s*(s - sideA)*(s - sideB)*(s - sideC));
+    };
+
+  this.isObtuse = function() {
+    if ((sideA**2 + sideB**2) < sideC**2 || (sideB**2 + sideC**2) < sideA**2 || (sideC**2 + sideA**2) < sideB**2) {
+      return true
+    }
+    else{
+      return false
+    }
+  };
+};  
+
+triangle1 = new Triangle(5, 5, 6);
+triangle2 = new Triangle(3, 4, 5);
+triangle3 = new Triangle(10, 4, 5);
+
+
+
+</script>
+
+

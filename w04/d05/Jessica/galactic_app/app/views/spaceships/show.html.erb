@@ -1,0 +1,11 @@
+<h1><%= @spaceship.name %> </h1>
+
+<img src="<%=@spaceship.photo_url%>">
+
+<ul>
+<li><a href ="/spaceships">See all other Spaceships!</a></li>
+
+<li><a href= "/spaceships/<%= params[:id] %>/aliens/">Aliens Aboard this Ship</a></li>
+
+<li><a href = "/spaceships/<%= params[:id] %>/aliens/new"> Create a New Alien </a></li>
+</ul>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="style.css">
+  <script type='text/javascript' src='js/src/game.js'></script>
+</head>
+<body>
+  <section class="game-play">
+
+    <figure>
+      <span>Guesses Left:</span> <span class="guesses-left"></span>
+    </figure>
+
+    <aside>
+      <div>
+        <span>Letters Guessed Already:</span>
+        <span class="guessed-letters"></span>
+      </div>
+
+      <div>
+        <form>
+          <label for="letter">Guess a Letter:</label>
+          <input type="text" name="letter" id="letter" />
+        </form>
+      </div>
+    </aside>
+  </section>
+
+  <div class="game-word"></div>
+
+  <section class="game-controls">
+    <button class="button give-up">Give Up</button>
+    <button class="button new-game">New Game</button>
+  </section>
+
+  <div class="score">
+    <span>Wins:</span>
+    <span class="wins">0</span> 
+    <span>Loses:</span>
+    <span class="loses">0</span>
+  </div>
+
+  <div class="players">
+    <span>Player 1:</span>
+    <span class="player1">0</span> 
+    <span>Player 2:</span>
+    <span class="player2">0</span>
+  </div> 
+
+  <script>
+
+    winScore = document.querySelector(".wins");
+    loseScore = document.querySelector(".loses");
+    var wins = 0;
+    var loses = 0;
+
+    var newGame = function() {
+      var genWord = new generateWord;
+      var game = new Game(genWord.word);
+    
+      guessesLeftDisplay = document.querySelector(".guesses-left");
+      guessesLeftDisplay.innerText = game.guessesLeft+1;
+      guessedLetters = document.querySelector(".guessed-letters");
+      gameWord = document.querySelector(".game-word");
+      form = document.querySelector("form");
+      gameWord.innerText = game.correctGuesses.join("");
+      newGameButton = document.querySelector(".new-game");
+      giveUpButton = document.querySelector(".give-up");
+
+      var addLetter = function(eventObject){
+        eventObject.preventDefault();
+        letter = this.elements["letter"].value;
+        game.guess(letter.toLowerCase());
+        guessedLetters.innerText = game.incorrectGuesses.join(" ");
+        guessesLeftDisplay.innerText = game.guessesLeft+1;
+        gameWord.innerText = game.correctGuesses.join("");
+        this.reset();
+        if(game.correctGuesses.join("") === game.word) {
+          alert("You win!");
+          wins += 1;
+          winScore.innerText = wins;
+        }
+        if(game.guessesLeft === -1) {
+          alert("You lost. Please play again.");
+          loses += 1;
+          loseScore.innerText = loses;
+        }
+      }
+      form.addEventListener("submit", addLetter);
+      giveUpButton.addEventListener("click", function() {
+        alert("You gave up!");
+        loses += 1;
+        loseScore.innerText = loses;
+        gameWord.innerText = game.word;
+      });
+    };
+
+    newGame();
+
+    
+
+    newGameButton.addEventListener("click", newGame);
+
+  </script>
+</body>
+</html>

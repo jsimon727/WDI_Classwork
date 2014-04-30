@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="js/src/ttt.js"></script>
+</head>
+<body>
+  <ul class="board">
+  </ul>
+
+  <script type="text/javascript">
+    var game = new Game();
+
+
+    var marksTheSpot = function(){
+      var row = parseInt(this.id/3);
+      var column = this.id%3;
+      game.mark(game.turn, {row: row, column: column})
+      render();
+    }
+
+    function render(){
+    var board = document.querySelector("ul.board");
+    board.innerHTML = "";
+
+    for (var i = 0; i < 9; i++) {
+      var li = document.createElement("li");
+      li.className = game.board[parseInt(i/3)][i%3];
+      li.id = i
+      board.appendChild(li);
+      li.addEventListener("click", marksTheSpot);
+      }
+      if (game.gameOver()){
+        var finalNums = game.assignWinners();
+        if(finalNums){
+        for(var i = 0; i < finalNums.length; i++){
+          var change = document.getElementById(finalNums[i]); 
+          change.className = "winning";
+        };
+      }
+    }
+};
+  render();
+  
+ 
+
+  </script>
+</body>
+</html>
